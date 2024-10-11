@@ -49,7 +49,7 @@ namespace SpacecraftTracker.WebAPI.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] AuthDTO loginRequest)
         {
-            var user = await userManager.FindByEmailAsync(loginRequest.Username);
+            var user = await userManager.FindByNameAsync(loginRequest.Username);
 
             if (user != null)
             {
